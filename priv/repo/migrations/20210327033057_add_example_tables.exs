@@ -10,7 +10,7 @@ defmodule EctoSummoner.Repo.Migrations.AddExampleTables do
 
     create table(:registered_owners) do
       add(:name, :string, null: false)
-      add(:birthday, :utc_datetime_usec, null: false)
+      add(:birthday, :date, null: false)
 
       timestamps()
     end

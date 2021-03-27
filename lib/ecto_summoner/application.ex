@@ -5,11 +5,12 @@ defmodule EctoSummoner.Application do
 
   use Application
 
+  alias EctoSummoner.Repo
+
   @impl true
   def start(_type, _args) do
     children = [
-      # Starts a worker by calling: EctoSummoner.Worker.start_link(arg)
-      # {EctoSummoner.Worker, arg}
+      Repo
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
