@@ -49,5 +49,11 @@ defmodule EctoSummoner.Repo.Migrations.AddExampleTables do
 
       timestamps()
     end
+
+    create table(:logs) do
+      add(:log, :text)
+
+      timestamps()
+    end
   end
 end

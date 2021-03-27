@@ -2,10 +2,17 @@
 
 Magically summon Ecto fixtures w/ fake data for your tests.
 
-# Example
+![Entity relationship diagram](http://www.plantuml.com/plantuml/png/RP31IiGm48RlUOgXzptu0Cg21oyMnOl7ChPZTo2PXCa4BUAxImfXrz1J8FDz_oJ_EHkgbU1Tm0HF6EWnIewUuCU1O22uVu1ioh8wICepJIpJJ6AvJbYCLbBtwtR_EQxL0n_NgzU68qhvnDcAabQgnNVOAocd2odw8mZ0jdHWlT7AsKXfUVaIqcFrWzKk2sxrijWy6GVAXY6rb7TKHR5jrutDTtvSTjVeswfoMzTmDy3fj1yjnVtxSGF60Muyrp_y6EjNDUHQLhTiR4ZVZ3kJB2NuFm00 "Entity relationship diagram")
 
+# Example For Single Record
 
-![Entity relationship diagram](http://www.plantuml.com/plantuml/png/RP31IiKm44Nt-OhG_Llu0Se35wwAuiPb6TknRo2PXiaDMiH_bnO2VQ6hG7BEdSozPf2XnE0Y9Vz2aPyNpKjW_-kyKcJ_-EGpJ7HsFfcCF8WE8olozY8AdjdSdzlzdhHyqOXYR5j0ar2nDpP9DpOAPv3tMDE9zSwpPB3nzFgjREVgfnXk4wtRPS4uG29dK4mrvOFCIB7kEWIXyPTfTy4_s9HZ8zr3vo-N_QWfxcxZ2lJTiKdNVlmSQqPLv51MCwolIDkCkx9E9OP_ "Entity relationship diagram")
+```
+iex> summon!(:log)
+%Log{log: "log_0"}
+```
+
+# Example With Associations
+
 
 **Relationships:**
 
