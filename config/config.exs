@@ -4,6 +4,7 @@ config :ecto_summoner, EctoSummoner.Repo,
   database: "ecto_summoner_repo",
   username: "postgres",
   password: "pass",
-  hostname: "localhost"
+  hostname: "localhost",
+  migration_timestamps: [type: :utc_datetime_usec]
 
 config :ecto_summoner, :ecto_repos, [EctoSummoner.Repo]
