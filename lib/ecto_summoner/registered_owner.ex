@@ -12,9 +12,7 @@ defmodule EctoSummoner.RegisteredOwner do
 
     has_many(:game_consoles, GameConsole)
 
-    many_to_many(:manufacturers, Manufacturer,
-      join_through: :manufacturers_registered_owners
-    )
+    many_to_many(:manufacturers, Manufacturer, join_through: :manufacturers_registered_owners)
 
     timestamps()
   end

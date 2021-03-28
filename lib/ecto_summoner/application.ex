@@ -5,12 +5,14 @@ defmodule EctoSummoner.Application do
 
   use Application
 
+  alias EctoSummoner.FixtureModuleMapper
   alias EctoSummoner.Repo
 
   @impl true
   def start(_type, _args) do
     children = [
-      Repo
+      Repo,
+      FixtureModuleMapper
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

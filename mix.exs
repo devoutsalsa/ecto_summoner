@@ -37,8 +37,8 @@ defmodule EctoSummoner.MixProject do
     [
       # SQL database wrapper
       {:ecto_sql, "~> 3.0"},
-      # JSON type for Ecto Schema
-      {:ecto_json, "~> 0.1.0"},
+      # Incremental fake data
+      {:plus_one_updoot, "~> 0.3"},
       # PostgreSQL driver
       {:postgrex, ">= 0.0.0"}
     ]
