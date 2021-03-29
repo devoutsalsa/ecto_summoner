@@ -4,12 +4,20 @@ Magically summon Ecto fixtures w/ fake data for your tests.
 
 ![Entity relationship diagram](http://www.plantuml.com/plantuml/png/RP31IiGm48RlUOgXzptu0Cg21oyMnOl7ChPZTo2PXCa4BUAxImfXrz1J8FDz_oJ_EHkgbU1Tm0HF6EWnIewUuCU1O22uVu1ioh8wICepJIpJJ6AvJbYCLbBtwtR_EQxL0n_NgzU68qhvnDcAabQgnNVOAocd2odw8mZ0jdHWlT7AsKXfUVaIqcFrWzKk2sxrijWy6GVAXY6rb7TKHR5jrutDTtvSTjVeswfoMzTmDy3fj1yjnVtxSGF60Muyrp_y6EjNDUHQLhTiR4ZVZ3kJB2NuFm00 "Entity relationship diagram")
 
-# Example For Single Record
+# Example For Single Record w/ Only String Types & No Associations
 
 ```
-iex> summon!(:log)
-%Log{log: "log_0"}
+iex> EctoSummoner.summon!(:log)
+%Log{log: "log-0"}
 ```
+
+# Example For Multiple Records w/ Only String Types & No Associations
+
+```
+iex> EctoSummoner.summon!(:logs)
+[%Log{log: "log-9"}, %Log{log: "log-10"}, %Log{log: "log-11"}]
+```
+
 
 # Example With Associations
 
