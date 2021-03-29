@@ -6,6 +6,8 @@ config :ecto_summoner, EctoSummoner.Repo,
   password: "pass",
   hostname: "localhost"
 
+config :ecto_summoner, ecto_repos: [EctoSummoner.Repo]
+
 config :ecto_summoner, EctoSummoner.FixtureModuleMapper,
   app: :ecto_summoner,
   default_repo: EctoSummoner.Repo

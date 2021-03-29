@@ -5,8 +5,8 @@ defmodule EctoSummoner.FixtureModuleMapper do
   # API #
   #######
 
-  def map!(fixture_key) when is_atom(fixture_key) do
-    fixture_key = Atom.to_string(fixture_key)
+  def map!(fixture_key) do
+    fixture_key = to_string(fixture_key)
 
     Agent.get(__MODULE__, fn fixture_module_map ->
       %{modules: [module], repo: repo} = Map.fetch!(fixture_module_map, fixture_key)

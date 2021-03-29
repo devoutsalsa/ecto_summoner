@@ -5,14 +5,13 @@ defmodule EctoSummoner.Log do
 
   schema "logs" do
     field(:log, :string)
-
     timestamps()
   end
 
   @doc false
   def changeset(user, attrs) do
     user
-    |> cast(attrs, [:body])
-    |> validate_required([:body])
+    |> cast(attrs, [:log])
+    |> validate_required([:log])
   end
 end
