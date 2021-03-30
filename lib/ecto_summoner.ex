@@ -16,7 +16,7 @@ defmodule EctoSummoner do
         1..count
         |> Enum.map(fn _ ->
           attrs = Faker.fake!(module.__struct__)
-          
+
           module.__struct__
           |> module.changeset(attrs)
           |> repo.insert!()
