@@ -65,6 +65,10 @@ defmodule EctoSummoner.Faker do
     keys_types_map
   end
 
+  def fake_the_field!({key, :date}) do
+    {key, PlusOneUpdoot.date!()}
+  end
+
   def fake_the_field!({key, :integer}) do
     {key, PlusOneUpdoot.integer!()}
   end
