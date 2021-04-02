@@ -77,16 +77,20 @@ defmodule EctoSummoner.FixtureModuleMapper do
   def underscore_modules_basenames(modules, repo) do
     modules
     |> Enum.map(fn module ->
-      underscore_basename =
-        module
-        |> Module.split()
-        |> List.last()
-        |> Macro.underscore()
+      underscore_basename = underscore_module_basename(module)
 
       fixture_attrs =
         FixtureAttributes.Record.new(derived_from: :module_basename, module: module, repo: repo)
 
       {underscore_basename, fixture_attrs}
     end)
+  end
+
+  @doc false
+  def underscore_module_basename(module) do
+    module
+    |> Module.split()
+    |> List.last()
+    |> Macro.underscore()
   end
 end
