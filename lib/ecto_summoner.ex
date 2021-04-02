@@ -11,23 +11,31 @@ defmodule EctoSummoner do
   def summon!(fixture_key) do
     fixture_attributes = FixtureModuleMapper.map!(fixture_key)
 
+    records = 
+      case fixture_attributes do
+        %Collection{count: count, module: module, repo: repo} -> 
+          for _ <- 1..count do
+            %Record{module: module, repo: repo}
+          end
+        record -> 
+          [record]
+      end
+
+    records =
+      for record <- records do
+        attrs = Faker.fake!(record.module.__struct__)
+
+        record.module.__struct__
+        |> record.module.changeset(attrs)
+        |> record.repo.insert!()
+      end
+
     case fixture_attributes do
-      %Collection{count: count, module: module, repo: repo} ->
-        1..count
-        |> Enum.map(fn _ ->
-          attrs = Faker.fake!(module.__struct__)
-
-          module.__struct__
-          |> module.changeset(attrs)
-          |> repo.insert!()
-        end)
-
-      %Record{module: module, repo: repo} ->
-        attrs = Faker.fake!(module.__struct__)
-
-        module.__struct__
-        |> module.changeset(attrs)
-        |> repo.insert!()
+      %Collection{} -> 
+        records
+       _ -> 
+        [record] = records
+        record
     end
   end
 end

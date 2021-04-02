@@ -19,15 +19,15 @@ defmodule EctoSummoner.Repo.Migrations.AddExampleTables do
       add(:name, :string, null: false)
       add(:price_in_cents, :integer, null: false)
 
-      add(:manufacturer_id, references(:manufacturers))
-      add(:registered_owner_id, references(:registered_owners))
+      add(:manufacturer_id, references(:manufacturers), null: false)
+      add(:registered_owner_id, references(:registered_owners), null: false)
 
       timestamps()
     end
 
     create table(:manufacturers_registered_owners) do
       add(:manufacturer_id, references(:manufacturers))
-      add(:registered_owner_id, references(:registered_owners))
+      add(:registered_owner_id, references(:registered_owners), null: false)
 
       timestamps()
     end
@@ -36,7 +36,7 @@ defmodule EctoSummoner.Repo.Migrations.AddExampleTables do
       add(:name, :string, null: false)
       add(:type, :string, null: false)
 
-      add(:game_console_id, references(:game_consoles))
+      add(:game_console_id, references(:game_consoles), null: false)
 
       timestamps()
     end
@@ -45,7 +45,7 @@ defmodule EctoSummoner.Repo.Migrations.AddExampleTables do
       add(:title, :string, null: false)
       add(:body, :text, null: false)
 
-      add(:game_console_id, references(:game_consoles))
+      add(:game_console_id, references(:game_consoles), null: false)
 
       timestamps()
     end
